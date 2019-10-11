@@ -1,0 +1,12 @@
+version: '2'
+services:
+  react-base:
+    image: node:latest
+    volumes:
+      - ./vomos-client-app:/opt
+      - /vomos-client-app/node_modules
+    working_dir: /opt
+  react-install:
+    extends:
+      service: react-base
+    command: npm install

@@ -1,0 +1,13 @@
+version: '2'
+services:
+   react:
+     container_name: vomos-client-app
+     image: node:latest
+     ports:
+       - "3000:3000"
+     volumes:
+       - ./vomos-client-app:/opt
+       - /vomos-client-app/node_modules
+     restart: always
+     working_dir: /opt
+     command: npm run web
